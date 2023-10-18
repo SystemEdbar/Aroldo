@@ -1,5 +1,5 @@
 <x-slot name="header">
-    <h1 class="text-gray-900">CRUD con Laravel 8 y Livewire</h1>
+    <h1 class="text-gray-900">REQUERIMIENTOS</h1>
 </x-slot>
 
 <div class="py-12">
@@ -27,7 +27,7 @@
             <tr class="bg-indigo-600 text-white">
                 <th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">DESCRIPCION</th>
-                <th class="px-4 py-2">CANTIDAD</th>
+                <th class="px-4 py-2">HABILIDADES</th>
                 <th class="px-4 py-2">ACCIONES</th>    
             </tr>
         </thead>
