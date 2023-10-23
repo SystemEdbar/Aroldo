@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Livewire\HabilitiesController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Productos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +15,21 @@ use App\Http\Livewire\Productos;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $users = User::with('habilities')->get();
+    return view('welcome', compact('users'));
+})->name('welcome');
+
+Route::get('/usuarios', function () {
+    $users = User::with('habilities')->get();
+    return view('users', compact('users'));
+})->name('users');
+
+Route::get('/contactanos', function () {
+    return view('contac',);
+})->name('contac');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function (){
-    Route::get('/productos', Productos::class)->name('productos');
+    Route::get('/habilidades', HabilitiesController::class)->name('habilidades');
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');

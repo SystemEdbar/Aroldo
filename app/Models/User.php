@@ -23,10 +23,17 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    public function habilities()
+    {
+        return $this->hasMany('App\Models\Habilities', 'id_user', 'id');
+    }
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        'profile_photo_url',
     ];
 
     /**
