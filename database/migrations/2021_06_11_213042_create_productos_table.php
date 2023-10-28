@@ -16,7 +16,7 @@ class CreateProductosTable extends Migration
         Schema::create('habilities', function (Blueprint $table) {
             $table->id();
             $table->string('description');
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreignId('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }
