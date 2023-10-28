@@ -13,10 +13,10 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('habilities', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion',50);
-            $table->integer('cantidad');
+            $table->string('description');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('habilities');
     }
 }
